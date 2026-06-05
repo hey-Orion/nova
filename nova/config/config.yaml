@@ -1,1 +1,9 @@
-j
+pipeline:
+  timeout: 5
+
+paths:
+  VALIDATED_DATA: "nova/data/validated/records.json"
+
+  REJECTED_DATA: "nova/data/rejected/rejected_records.json"
+
+  LOGS: "nova/logs"

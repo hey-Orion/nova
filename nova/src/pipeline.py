@@ -1,13 +1,18 @@
+import os
 import json
 from pathlib import Path
 
 from nova.src.ingestion import fetch_data
 from nova.src.validation import validate_records
 from nova.src.logger import get_logger
+from dotenv import load_dotenv
+from nova.config.settings import config
+
+load_dotenv()
 
 logger = get_logger(__name__)
 
-URL = "https://dummyjson.com/carts"
+URL = os.getenv("API_URL")
 
 
 def save_json(data: list, file_path: Path) -> None:
@@ -35,12 +40,12 @@ def run_pipeline() -> None:
 
     save_json(
         valid_records,
-        Path("nova/data/validated/records.json")
+        config["paths"]["VALIDATED_DATA"]
     )
 
     save_json(
         invalid_records,
-        Path("nova/data/rejected/rejected_records.json")
+        config["paths"]["REJECTED_DATA"]
     )
 
     logger.info("Saved validated records")
