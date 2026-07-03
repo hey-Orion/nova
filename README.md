@@ -1,10 +1,9 @@
-# Archived
+## Archived
 
-## nova was a learning project. 
-Designed like a working data pipeline project.
+### Nova was a learning project.
+It was designed to simulate a real-world data pipeline.
 
-Right now it is shifted to project-lab
-as Foxtrot
-with some infrastructure changes. 
+The project has now been moved to **project-lab** as **Foxtrot**, with few infrastructure improvements.
 
-## Note: This repository is archived and is no longer dev.
+### Note
+This repository is now used to store interview practice questions.
